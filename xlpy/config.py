@@ -21,7 +21,7 @@ class Config(object):
         'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0',
         'Accept': 'application/json, text/plain, */*',
         'Accept-Encoding': 'gzip, deflate, br',
-		'Content-Type': 'application/json'
+	'Content-Type': 'application/json'
     }
 
     def __init__(self):
