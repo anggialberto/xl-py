@@ -20,6 +20,7 @@ $ git clone https://github.com/albertoanggi/xl-py
 ## Usage
 
 ```python
+$ python
 >>> from xlpy import *
 >>> xl = XL('MSISDN')
 >>> #Request OTP Code
