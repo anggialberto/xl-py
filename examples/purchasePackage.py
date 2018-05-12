@@ -4,7 +4,6 @@ from xlpy import *
 xl = XL('MSISDN/NO.TELP')
 r = xl.loginWithOTP('OTP Code')
 if(r != False):
-    s = xl.purchasePackage('Service ID')
-    print(s['message'])
+    print(xl.purchasePackage('Service ID')['message'])
 else:
     print("Login failed try again")
