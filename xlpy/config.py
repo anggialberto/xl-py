@@ -5,6 +5,7 @@ class Config(object):
     XL_HOST_DOMAIN              =  'https://my.xl.co.id'
     
     XL_OTPRQ_QUERY_PATH         =  '/pre/LoginSendOTPRq'
+    XL_PASSRQ_QUERY_PATH        =  '/prepaid/ForgotPasswordRq'
     XL_LOGIN_QUERY_PATH         =  '/pre/LoginValidateOTPRq'
     XL_PURCHASEPKG_QUERY_PATH   =  '/pre/opPurchase'
 
