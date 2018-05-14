@@ -69,7 +69,7 @@ class XL(Config):
             if (status['SOAP-ENV:Envelope']['SOAP-ENV:Body'][0]['ns0:CommonResponse'][0]['ns0:ResponseCode'] == '00'): 
                 return {"message" : "Successfully get Password"}
             else: 
-                return {"message" : status['SOAP-ENV:Envelope']['SOAP-ENV:Body'][0]['ns0:CommonResponse'][0]['ns0:ErrorMessage'][0]}
+                return {"message" : "Failed get Password"}
         except:
             return {'message' : status['message']}
     
