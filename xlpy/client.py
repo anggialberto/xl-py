@@ -44,6 +44,35 @@ class XL(Config):
             else: return {"message" : status['message']}
         if(len(status) == 1): return {"message" : "Failed get OTP"}
     
+    def reqPassword(self):
+        payload = {
+            "Body" : {
+                "Header" : {
+                    "ReqID" : self.date,
+                    "IMEI" : self.imei
+                },
+                "ForgotPasswordRq" : {
+                    "msisdn" : self.msisdn,
+                    "username" : ""
+                }
+            },
+            "platform" : "00",
+            "staySigned" : "True",
+            "onNetLogin" : "NO",
+            "appVersion" : "3.0.2",
+            "sourceName" : "Chrome",
+            "sourceVersion" : ""
+        }
+        r = requests.post(self.XL_HOST_DOMAIN + self.XL_PASSRQ_QUERY_PATH, json=payload, headers=self.headers)
+        status = json.loads(r.content)
+        try:
+            if (status['SOAP-ENV:Envelope']['SOAP-ENV:Body'][0]['ns0:CommonResponse'][0]['ns0:ResponseCode'] == '00'): 
+                return {"message" : "Successfully get Password"}
+            else: 
+                return {"message" : "Failed get Password"}
+        except:
+            return {'message' : status['message']}
+    
     def loginWithOTP(self, otpCode):
         payload = {
             "Header" : None,
