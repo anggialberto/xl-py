@@ -59,14 +59,9 @@ def menu_2():
         msisdn = str(input("Input your MSISDN >> "))
         xl = XL(msisdn)
         r = xl.reqOTP()['message']
-        if(r == "Successfully get OTP"):
-            print(r)
-            decision = str(input("Want to repeat the process [Y/N]? >> "))
-            again = 0 if(decision == 'N' or 'n') else again
-        else:
-            print(r)
-            decision = str(input("Want to repeat the process [Y/N]? >> "))
-            again = 0 if(decision == 'N' or 'n') else again
+        print(r)
+        decision = str(input("Want to repeat the process [Y/N]? >> "))
+        again = 0 if(decision == 'N' or 'n') else again
     menu_actions['main']()
 
 def menu_3():
@@ -77,14 +72,9 @@ def menu_3():
         msisdn = str(input("Input your MSISDN >> "))
         xl = XL(msisdn)
         r = xl.reqPassword()['message']
-        if(r == "Successfully get Password"):
-            print(r)
-            decision = str(input("Want to repeat the process [Y/N]? >> "))
-            again = 0 if(decision == 'N' or 'n') else again
-        else:
-            print(r)
-            decision = str(input("Want to repeat the process [Y/N]? >> "))
-            again = 0 if(decision == 'N' or 'n') else again
+        print(r)
+        decision = str(input("Want to repeat the process [Y/N]? >> "))
+        again = 0 if(decision == 'N' or 'n') else again
     menu_actions['main']()
 
 def exit():
