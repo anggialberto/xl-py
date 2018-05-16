@@ -36,8 +36,10 @@ class XL(Config):
             "sourceVersion" : "",
             "screenName" : "login.enterLoginNumber"
         }
-
-        r = requests.post(self.XL_HOST_DOMAIN + self.XL_OTPRQ_QUERY_PATH, json=payload, headers=self.headers)
+        try:
+            r = requests.post(self.XL_HOST_DOMAIN + self.XL_OTPRQ_QUERY_PATH, json=payload, headers=self.headers)
+        except:
+            r = requests.post(self.XL_HOST_DOMAIN + self.XL_OTPRQ_QUERY_PATH, json=payload, headers=self.headers, verify=False)
         status = json.loads(r.content)
         if(len(status) == 3):
             if ("LoginSendOTPRs" in status): return {"message" : "Successfully get OTP"}
@@ -63,7 +65,10 @@ class XL(Config):
             "sourceName" : "Chrome",
             "sourceVersion" : ""
         }
-        r = requests.post(self.XL_HOST_DOMAIN + self.XL_PASSRQ_QUERY_PATH, json=payload, headers=self.headers)
+        try:
+            r = requests.post(self.XL_HOST_DOMAIN + self.XL_PASSRQ_QUERY_PATH, json=payload, headers=self.headers)
+        except:
+            r = requests.post(self.XL_HOST_DOMAIN + self.XL_PASSRQ_QUERY_PATH, json=payload, headers=self.headers, verify=False)
         status = json.loads(r.content)
         try:
             if (status['SOAP-ENV:Envelope']['SOAP-ENV:Body'][0]['ns0:CommonResponse'][0]['ns0:ResponseCode'] == '00'): 
@@ -105,8 +110,10 @@ class XL(Config):
             "screenName" : "login.enterLoginOTP",
             "mbb_category" : ""
         }
-
-        r = requests.post(self.XL_HOST_DOMAIN + self.XL_LOGIN_QUERY_PATH, json=payload, headers=self.headers)
+        try:
+            r = requests.post(self.XL_HOST_DOMAIN + self.XL_LOGIN_QUERY_PATH, json=payload, headers=self.headers)
+        except:
+            r = requests.post(self.XL_HOST_DOMAIN + self.XL_LOGIN_QUERY_PATH, json=payload, headers=self.headers, verify=False)
         status = json.loads(r.content)
         if(len(status) == 5): self._sessionId = status['sessionId']
         else: return False
@@ -154,8 +161,10 @@ class XL(Config):
             "screenName" : "home.storeFrontReviewConfirm",
             "mbb_category" : ""
         }
-
-        r = requests.post(self.XL_HOST_DOMAIN + self.XL_PURCHASEPKG_QUERY_PATH, json=payload, headers=self.headers)
+        try:
+            r = requests.post(self.XL_HOST_DOMAIN + self.XL_PURCHASEPKG_QUERY_PATH, json=payload, headers=self.headers)
+        execet:
+            r = requests.post(self.XL_HOST_DOMAIN + self.XL_PURCHASEPKG_QUERY_PATH, json=payload, headers=self.headers, verify=False)
         status = json.loads(r.content)
         if(len(status) == 4): return {"message" : "Successfully purchased the package"}
         else: return {"message" : status['message']}
