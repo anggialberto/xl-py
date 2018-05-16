@@ -23,7 +23,8 @@ $ git clone https://github.com/albertoanggi/xl-py
 ## Usage
 
 ```sh
-username@localhost$:~/xl-py$ python app.py
+$ cd xl-py
+/xl-py$ python app.py
 ```
 
 ### Examples
