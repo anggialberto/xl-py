@@ -36,7 +36,7 @@ def menu_1():
         clear()
         print(".::Purchase Package Menu::.")
         msisdn = str(input("Input your MSISDN >> "))
-        po = str(input("Input your OTP"))
+        po = str(input("Input your OTP >> "))
         serviceid = str(input("Input your Service ID >> "))
         xl = XL(msisdn)
         r = xl.loginWithOTP(po)
