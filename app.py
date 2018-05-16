@@ -58,8 +58,7 @@ def menu_2():
         print(".::OTP Code Menu::.")
         msisdn = str(input("Input your MSISDN >> "))
         xl = XL(msisdn)
-        r = xl.reqOTP()['message']
-        print(r)
+        print(xl.reqOTP()['message'])
         decision = str(input("Want to repeat the process [Y/N]? >> "))
         again = 0 if(decision == 'N' or 'n') else again
     menu_actions['main']()
@@ -71,8 +70,7 @@ def menu_3():
         print(".::Password Menu::.")
         msisdn = str(input("Input your MSISDN >> "))
         xl = XL(msisdn)
-        r = xl.reqPassword()['message']
-        print(r)
+        print(xl.reqPassword()['message'])
         decision = str(input("Want to repeat the process [Y/N]? >> "))
         again = 0 if(decision == 'N' or 'n') else again
     menu_actions['main']()
