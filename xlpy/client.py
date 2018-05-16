@@ -163,7 +163,7 @@ class XL(Config):
         }
         try:
             r = requests.post(self.XL_HOST_DOMAIN + self.XL_PURCHASEPKG_QUERY_PATH, json=payload, headers=self.headers)
-        execet:
+        except:
             r = requests.post(self.XL_HOST_DOMAIN + self.XL_PURCHASEPKG_QUERY_PATH, json=payload, headers=self.headers, verify=False)
         status = json.loads(r.content)
         if(len(status) == 4): return {"message" : "Successfully purchased the package"}
