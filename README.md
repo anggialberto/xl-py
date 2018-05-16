@@ -8,22 +8,22 @@
 
 ## Requirement
 
-The xlpy module only requires Python 3. You can download from [here](https://www.python.org/downloads/). 
+The xlpy module requires Python 3 you can download from [here](https://www.python.org/downloads/) and Termux App you can download from [here](https://play.google.com/store/apps/details?id=com.termux)
 
 ## Installation
 
-Installation is simple. It can be installed from git using the following command:
+Installation is simple. It can be installed from git using the following command after open Termux:
 ```sh
+$ pkg install python
+$ pkg install git
+$ pip install requests
 $ git clone https://github.com/albertoanggi/xl-py
 ```
 
 ## Usage
 
-```python
->>> from xlpy import *
->>> xl = XL('MSISDN')
->>> #Request OTP Code
->>> xl.reqOTP()
+```sh
+username@localhost$:~/xl-py$ python app.oy
 ```
 
 ### Examples
