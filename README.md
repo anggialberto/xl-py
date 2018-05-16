@@ -24,7 +24,7 @@ $ git clone https://github.com/albertoanggi/xl-py
 
 ```sh
 $ cd xl-py
-/xl-py$ python app.py
+$ python app.py
 ```
 
 ### Examples
