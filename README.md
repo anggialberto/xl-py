@@ -8,7 +8,7 @@
 
 ## Requirement
 
-The xlpy module requires Python 3 you can download from [here](https://www.python.org/downloads/) and Termux App you can download from [here](https://play.google.com/store/apps/details?id=com.termux)
+The xlpy module requires Termux App you can download from [here](https://play.google.com/store/apps/details?id=com.termux)
 
 ## Installation
 
