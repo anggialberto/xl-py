@@ -64,8 +64,8 @@ def menu_2():
     menu_actions['main']()
 
 def menu_3():
-    again = True
-    while(again):
+    again = 1
+    while(again == 1):
         clear()
         print(".::Password Menu::.")
         msisdn = str(input("Input your MSISDN >> "))
