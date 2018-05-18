@@ -37,6 +37,18 @@ def menu_1():
         print(".::Purchase Package Menu::.")
         msisdn = str(input("Input your MSISDN >> "))
         po = str(input("Input your OTP >> "))
+        print(".::Service ID List::.\n\
+8110577 >> Xtra Kuota, 30GB, 30hr, 10K\n\
+8210886 >> Xtra Combo Lite 25GB, 30hr, 99.900K\n\
+8210885 >> Xtra Combo Lite 17GB, 30hr, 79.900K\n\
+8210884 >> Xtra Combo Lite 9GB, 30hr, 49.900K\n\
+8210883 >> Xtra Combo Lite 5GB, 30hr, 29.900K\n\
+8210882 >> Xtra Combo Lite 3GB, 30hr, 19.900K\n\
+8211183 >> Combo Xtra 5GB+5GB, 30hr,59rb\n\
+8211184 >> Combo Xtra 10GB+10GB, 30hr, 89rb\n\
+8211185 >> Combo Xtra 15GB+15GB, 30hr,129rb\n\
+8211231 >> XL GO IZI 10 GB, 7hr, Rp0\n\
+NB:the above list can not be used if replaced by the provider.")
         serviceid = str(input("Input your Service ID >> "))
         xl = XL(msisdn)
         r = xl.loginWithOTP(po)
