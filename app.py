@@ -31,49 +31,40 @@ def exec_menu(choice):
     return
 
 def menu_1():
-    again = 1
-    while(again == 1):
-        clear()
-        print(".::Purchase Package Menu::.")
-        msisdn = str(input("Input your MSISDN >> "))
-        po = str(input("Input your OTP >> "))
-        serviceid = str(input("Input your Service ID >> "))
-        xl = XL(msisdn)
-        r = xl.loginWithOTP(po)
-        if(r != False):
-            print(xl.purchasePackage(serviceid)['message'])
-            decision = str(input("Want to repeat the process [Y/N]? >> "))
-            again = 0 if(decision == 'N' or 'n') else again
-        else:
-            print("Login failed try again")
-            decision = str(input("Want to repeat the process [Y/N]? >> "))
-            again = 0 if(decision == 'N' or 'n') else again
+    print(".::Purchase Package Menu::.")
+    msisdn = str(input("Input your MSISDN >> "))
+    po = str(input("Input your OTP >> "))
+    serviceid = str(input("Input your Service ID >> "))
+    xl = XL(msisdn)
+    r = xl.loginWithOTP(po)
+    if(r != False):
+        print(xl.purchasePackage(serviceid)['message'])
+        decision = str(input("Want to repeat the process [Y/N]? >> "))
+        menu_actions['main']() if(decision == 'N' or 'n') else menu_actions['menu_1']()
+    else:
+        print("Login failed try again")
+        decision = str(input("Want to repeat the process [Y/N]? >> "))
+        menu_actions['main']() if(decision == 'N' or 'n') else menu_actions['menu_1']()
     menu_actions['main']()
 
 
 def menu_2():
-    again = 1
-    while(again == 1):
-        clear()
-        print(".::OTP Code Menu::.")
-        msisdn = str(input("Input your MSISDN >> "))
-        xl = XL(msisdn)
-        print(xl.reqOTP()['message'])
-        decision = str(input("Want to repeat the process [Y/N]? >> "))
-        again = 0 if(decision == 'N' or 'n') else again
-    menu_actions['main']()
+    clear()
+    print(".::OTP Code Menu::.")
+    msisdn = str(input("Input your MSISDN >> "))
+    xl = XL(msisdn)
+    print(xl.reqOTP()['message'])
+    decision = str(input("Want to repeat the process [Y/N]? >> "))
+    menu_actions['main']() if(decision == 'N' or 'n') else menu_actions['menu_2']()
 
 def menu_3():
-    again = 1
-    while(again == 1):
-        clear()
-        print(".::Password Menu::.")
-        msisdn = str(input("Input your MSISDN >> "))
-        xl = XL(msisdn)
-        print(xl.reqPassword()['message'])
-        decision = str(input("Want to repeat the process [Y/N]? >> "))
-        again = 0 if(decision == 'N' or 'n') else again
-    menu_actions['main']()
+    clear()
+    print(".::Password Menu::.")
+    msisdn = str(input("Input your MSISDN >> "))
+    xl = XL(msisdn)
+    print(xl.reqPassword()['message'])
+    decision = str(input("Want to repeat the process [Y/N]? >> "))
+    menu_actions['main']() if(decision == 'N' or 'n') else menu_actions['menu_3']()
 
 def exit():
     sys.exit()
