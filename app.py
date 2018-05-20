@@ -28,6 +28,7 @@ def exec_menu(choice):
         except KeyError:
             print("Invalid selection, please try again.\n")
             menu_actions['main']()
+    return
 
 def menu_1():
     print(".::Purchase Package Menu::.")
@@ -44,7 +45,8 @@ def menu_1():
         print("Login failed try again")
         decision = str(input("Want to repeat the process [Y/N]? >> "))
         menu_actions['main']() if(decision in ['N','n']) else menu_actions['1']()
-
+    return
+        
 def menu_2():
     clear()
     print(".::OTP Code Menu::.")
@@ -53,6 +55,7 @@ def menu_2():
     print(xl.reqOTP()['message'])
     decision = str(input("Want to repeat the process [Y/N]? >> "))
     menu_actions['main']() if(decision in ['N','n']) else menu_actions['2']()
+    return
 
 def menu_3():
     clear()
@@ -62,6 +65,7 @@ def menu_3():
     print(xl.reqPassword()['message'])
     decision = str(input("Want to repeat the process [Y/N]? >> "))
     menu_actions['main']() if(decision in ['N','n']) else menu_actions['3']()
+    return
 
 def exit():
     sys.exit()
