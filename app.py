@@ -54,7 +54,7 @@ def menu_2():
     xl = XL(msisdn)
     print(xl.reqOTP()['message'])
     decision = str(input("Want to repeat the process [Y/N]? >> "))
-    menu_actions['main']() if(decision in ['N','n']) else menu_actions['2']()
+    menu_actions['main']() if(decision in ['N','n']) else menu_2()
     return
 
 def menu_3():
