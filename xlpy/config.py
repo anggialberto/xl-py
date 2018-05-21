@@ -10,7 +10,7 @@ class Config(object):
     XL_PURCHASEPKG_QUERY_PATH   =  '/pre/opPurchase'
 
     DATE        =  datetime.datetime.now().strftime("%Y%m%d%I%M%S")
-    IMEI        =  '1365925237'
+    IMEI        =  '3335892050'
 
     SERVICE_ID  =  {
         'XL_XTRA_KUOTA' : '8110577',
