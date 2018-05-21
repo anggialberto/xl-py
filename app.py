@@ -55,7 +55,6 @@ def menu_2():
     print(xl.reqOTP()['message'])
     decision = str(input("Want to repeat the process [Y/N]? >> "))
     menu_actions['main']() if(decision in ['N','n']) else menu_2()
-    return
 
 def menu_3():
     clear()
