@@ -32,10 +32,10 @@ def exec_menu(choice):
 def menu_1():
     print(".::Purchase Package Menu::.")
     msisdn = str(input("Input your MSISDN >> "))
-    pass = str(input("Input your Password >> "))
+    passwd = str(input("Input your Password >> "))
     serviceid = str(input("Input your Service ID >> "))
     xl = XL(msisdn)
-    r = xl.loginWithPassword(pass)
+    r = xl.loginWithPassword(passwd)
     if(r != False):
         print(xl.purchasePackage(serviceid)['message'])
         decision = str(input("Want to repeat the process [Y/N]? >> "))
