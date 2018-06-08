@@ -10,8 +10,7 @@ def main_menu():
         "   .::XL - Direct Purchase Package::." +
         "\nPlease choose the menu you want to start:"
         "\n[1] Purchase Package" + 
-        "\n[2] Request OTP Code" +
-        "\n[3] Request Password"  +
+        "\n[2] Request Password"  +
         "\n[0] Quit"
     )
     choice = str(input(" >> "))
@@ -33,10 +32,10 @@ def exec_menu(choice):
 def menu_1():
     print(".::Purchase Package Menu::.")
     msisdn = str(input("Input your MSISDN >> "))
-    po = str(input("Input your OTP >> "))
+    pass = str(input("Input your Password >> "))
     serviceid = str(input("Input your Service ID >> "))
     xl = XL(msisdn)
-    r = xl.loginWithOTP(po)
+    r = xl.loginWithPassword(pass)
     if(r != False):
         print(xl.purchasePackage(serviceid)['message'])
         decision = str(input("Want to repeat the process [Y/N]? >> "))
@@ -49,21 +48,12 @@ def menu_1():
         
 def menu_2():
     clear()
-    print(".::OTP Code Menu::.")
-    msisdn = str(input("Input your MSISDN >> "))
-    xl = XL(msisdn)
-    print(xl.reqOTP()['message'])
-    decision = str(input("Want to repeat the process [Y/N]? >> "))
-    menu_actions['main']() if(decision in ['N','n']) else menu_2()
-
-def menu_3():
-    clear()
     print(".::Password Menu::.")
     msisdn = str(input("Input your MSISDN >> "))
     xl = XL(msisdn)
     print(xl.reqPassword()['message'])
     decision = str(input("Want to repeat the process [Y/N]? >> "))
-    menu_actions['main']() if(decision in ['N','n']) else menu_actions['3']()
+    menu_actions['main']() if(decision in ['N','n']) else menu_actions['2']()
     return
 
 def exit():
@@ -76,7 +66,6 @@ menu_actions = {
     "main" : main_menu,
     "1" : menu_1,
     "2" : menu_2,
-    "3" : menu_3,
     "0" : exit
 }
 
