@@ -34,13 +34,13 @@ def menu_1():
     msisdn = str(input("Input your MSISDN >> "))
     passwd = str(input("Input your Password >> "))
         print(
-        "\n   List of Internet package Service ID:"
-        "\n[1] Combo Lite 3GB (Rp. 19.900) - 8210882" + 
-        "\n[2] Combo Lite 5GB (Rp. 29.900) - 8210883" +
-        "\n[3] Combo Lite 9GB (Rp. 49.900) - 8210884" +
-        "\n[4] Combo Lite 9GB (Rp. 79.900) - 8210885" +
-        "\n[5] XtraKuota 30GB (Rp. 10.000) - 8110577" +
-        "\n-----------------------------------------"
+            "\n   List of Internet package Service ID:"
+            "\n[1] Combo Lite 3GB (Rp. 19.900) - 8210882" + 
+            "\n[2] Combo Lite 5GB (Rp. 29.900) - 8210883" +
+            "\n[3] Combo Lite 9GB (Rp. 49.900) - 8210884" +
+            "\n[4] Combo Lite 9GB (Rp. 79.900) - 8210885" +
+            "\n[5] XtraKuota 30GB (Rp. 10.000) - 8110577" +
+            "\n-----------------------------------------"
         )
     serviceid = str(input("Input your Service ID >> "))
     xl = XL(msisdn)
