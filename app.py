@@ -41,6 +41,7 @@ def menu_1():
         "\n[4] Combo Lite 9GB (Rp. 79.900) - 8210885" +
         "\n[5] XtraKuota 30GB (Rp. 10.000) - 8110577" +
         "\n-----------------------------------------"
+        )
     serviceid = str(input("Input your Service ID >> "))
     xl = XL(msisdn)
     r = xl.loginWithPassword(passwd)
