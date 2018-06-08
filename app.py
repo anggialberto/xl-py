@@ -33,17 +33,23 @@ def menu_1():
     print(".::Purchase Package Menu::.")
     msisdn = str(input("Input your MSISDN >> "))
     passwd = str(input("Input your Password >> "))
+        print(
+        "\n   List of Internet package Service ID:"
+        "\n[1] Combo Lite 3GB (Rp. 19.900) - 8210882" + 
+        "\n[2] Combo Lite 5GB (Rp. 29.900) - 8210883" +
+        "\n[3] Combo Lite 9GB (Rp. 49.900) - 8210884" +
+        "\n[4] Combo Lite 9GB (Rp. 79.900) - 8210885" +
+        "\n[5] XtraKuota 30GB (Rp. 10.000) - 8110577" +
+        "\n-----------------------------------------"
     serviceid = str(input("Input your Service ID >> "))
     xl = XL(msisdn)
     r = xl.loginWithPassword(passwd)
     if(r != False):
         print(xl.purchasePackage(serviceid)['message'])
-        decision = str(input("Want to repeat the process [Y/N]? >> "))
-        menu_actions['main']() if(decision in ['N','n']) else menu_actions['1']()
     else:
         print("Login failed try again")
-        decision = str(input("Want to repeat the process [Y/N]? >> "))
-        menu_actions['main']() if(decision in ['N','n']) else menu_actions['1']()
+    decision = str(input("Want to repeat the process [Y/N]? >> "))
+    menu_actions['main']() if(decision in ['N','n']) else menu_actions['1']()
     return
         
 def menu_2():
