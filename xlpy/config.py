@@ -3,26 +3,25 @@ import datetime
 
 class Config(object):
     XL_HOST_DOMAIN              =  'https://my.xl.co.id'
-    
+    XL_HOST_DOMAINV2            =  'https://myprepaid.xl.co.id'
     XL_OTPRQ_QUERY_PATH         =  '/pre/LoginSendOTPRq'
     XL_PASSRQ_QUERY_PATH        =  '/prepaid/ForgotPasswordRq'
     XL_LOGIN_QUERY_PATH         =  '/pre/LoginValidateOTPRq'
+    XL_LOGINPWD_QUERY_PATH      =  '/prepaid/LoginV2Rq'
     XL_PURCHASEPKG_QUERY_PATH   =  '/pre/opPurchase'
+    XL_PURCHASEPKG_QUERY_PATHV2 =  '/prepaid/opPurchase'
 
     DATE        =  datetime.datetime.now().strftime("%Y%m%d%I%M%S")
-    IMEI        =  '3335892050'
-
-    SERVICE_ID  =  {
-        'XL_XTRA_KUOTA' : '8110577',
-        'XL_GO_IZI'     : '8211231'
-    }
+    IMEI        =  'a26f8bbe24104a6d'
 
     HEADERS     =  {
-        'Host': 'my.xl.co.id',
-        'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0',
-        'Accept': 'application/json, text/plain, */*',
-        'Accept-Encoding': 'gzip, deflate, br',
-	'Content-Type': 'application/json'
+        'Host': 'myprepaid.xl.co.id',
+        'Connection' : 'keep-alive',
+        'User-Agent' : 'Mozilla/5.0 (Linux; Android 5.1; A1601 Build/LMY47I) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19',
+        'Accept' : 'application/json, text/plain, */*',
+        'Accept-Language' : 'en-US,en;q=0.5',
+        'Accept-Encoding' : 'gzip, deflate, br',
+	    'Content-Type' : 'application/json'
     }
 
     def __init__(self):
