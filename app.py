@@ -10,7 +10,7 @@ def main_menu():
         "   .::XL - Direct Purchase Package::." +
         "\nPlease choose the menu you want to start:"
         "\n[1] Purchase Package" + 
-        "\n[2] Request Password"  +
+        "\n[2] Request OTP"  +
         "\n[0] Quit"
     )
     choice = str(input(" >> "))
@@ -35,17 +35,17 @@ def menu_1():
     passwd = str(input("Input your Password >> "))
     print(
         "List of Internet package Service ID:"
-        "\n[1] Combo Lite 3GB (Rp. 19.900) - 8210882" + 
-        "\n[2] Combo Lite 5GB (Rp. 29.900) - 8210883" +
-        "\n[3] Combo Lite 9GB (Rp. 49.900) - 8210884" +
-        "\n[4] Combo Lite 17GB(Rp. 79.900) - 8210885" +
-        "\n[4] Combo Lite 25GB(Rp. 99.900) - 8210886" +
+        "\n[1] Combo Lite 3GB  - 8211010" + 
+        "\n[2] Combo Lite 5GB  - 8211011" +
+        "\n[3] Combo Lite 9GB  - 8211012" +
+        "\n[4] Combo Lite 17GB - 8211013" +
+        "\n[4] Combo Lite 25GB - 8211014" +
         "\n[5] XtraKuota 30GB (Rp. 10.000) - 8110577" +
         "\n-----------------------------------------"
         )
     serviceid = str(input("Input your Service ID >> "))
     xl = XL(msisdn)
-    r = xl.loginWithPassword(passwd)
+    r = xl.loginWithOTP(passwd)
     if(r != False):
         print(xl.purchasePackage(serviceid)['message'])
     else:
@@ -59,7 +59,7 @@ def menu_2():
     print(".::Password Menu::.")
     msisdn = str(input("Input your MSISDN >> "))
     xl = XL(msisdn)
-    print(xl.reqPassword()['message'])
+    print(xl.reqOTP()['message'])
     decision = str(input("Want to repeat the process [Y/N]? >> "))
     menu_actions['main']() if(decision in ['N','n']) else menu_actions['2']()
     return
