@@ -48,7 +48,7 @@ class XL(Config):
             else:
                 return ({'message' : 'Error Parameter'})
         except:
-            return ({'message' : 'Uknown Error'})
+            return ({'message' : 'Unknown Error'})
     
     def loginWithOTP(self, otpCode):
         payload = {
@@ -137,4 +137,4 @@ class XL(Config):
             else:
                 return({'message' : status['message']})
         except:
-            return({'message' : 'Uknown Error'})
+            return({'message' : 'Unknown Error'})
