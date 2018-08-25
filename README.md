@@ -8,11 +8,7 @@
 
 ## Requirement
 
-* Node.js v8.11.4
-* NPM v6.4.0
-* request
-* request-promise
-* fs
+The xlpy module requires Termux App you can download from [here](https://play.google.com/store/apps/details?id=com.termux)
 
 ## Installation
 
